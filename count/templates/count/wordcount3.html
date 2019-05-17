@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% block content %}
+        <form method='post' action="{% url 'count:vote' %}">
+        {% csrf_token %}
+        <ul>
+            {% for star in star_list %}
+            <li><input type="radio" name="star_id" id="star{{ forloop.counter }}" value="{{ star.pk }}"/>
+                <label for="star{{ forloop.counter }}"><h1><strong>{{ star.star_text }}</strong></h1></label></li>
+        {% endfor %}
+        </ul>
+        <input style="margin-left: 200px;" type="submit" value="투표하세요~"/>
+        </form>
+    <div>
+    <br>
+        <div>
+            <div>
+                <a href="{% url 'count:index' %}"><h2>되돌아가기!!</h2></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

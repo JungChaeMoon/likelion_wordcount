@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>사용자들의 만족도!</h1>
+
+    <ul>
+    {% for star in stars %}
+        <li><h1>{{ star.star_text }} : {{ star.votes.count }}개</h1></li>
+    {% endfor %}
+    </ul>
+<div>
+    <h2><a href="{% url 'count:see' %}">다시투표하기~~</a></h2>
+</div>
+{% endblock %}

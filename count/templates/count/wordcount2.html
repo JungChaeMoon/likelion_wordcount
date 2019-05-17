@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+<div style="margin-top: 400px;">
+    <div style="margin-left: 850px;">
+        <h1 style="font-family: 'Stylish', sans-serif;">ABOUT!</h1>
+    </div>
+
+</div>
+
+<div style="margin-left: 550px;">
+    <div>
+        <h3 style="font-family: 'Stylish', sans-serif;">이 프로그램은 요청한 문장을 count해줌과 동시에 단어도 count 해주는 프로그램임니다~
+        </h3>
+        <br>
+        <div style="margin-left: 300px;">
+            <h4 style="font-family: 'Stylish', sans-serif;">채문이 만든거~~</h4>
+        </div>
+
+    </div>
+</div>
+    <br>
+
+    <div style="margin-left: 820px;">
+        <a href="{% url 'count:index' %}"><h1>되돌아가기~~</h1></a>
+    </div>
+{% endblock %}
